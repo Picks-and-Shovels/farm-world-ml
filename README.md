@@ -5,4 +5,4 @@ Picks-and-Shovels FarmWorld ML Part Repository
 - Tensorflow 2.13.0
 ## Functions
 - Plant Disease Detection
- - Using Kaggle Plant Village Dataset (https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset)
+	- Using Kaggle Plant Village Dataset (https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset)
