@@ -1,0 +1,4 @@
+id,createdAt,updatedAt,title,content,views,likes,writerId
+1,2024-01-26 13:03:56.955196,2024-01-26 13:05:55.000000,hyunmin,dinner,2,0,1
+2,2024-01-26 13:04:22.360448,2024-01-26 13:04:22.360448,Boy,tomatoSoup,0,0,3
+3,2024-01-26 13:04:31.827190,2024-01-26 13:06:10.000000,girl,tanghuruuuu,1,1,2
