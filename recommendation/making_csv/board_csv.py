@@ -28,7 +28,7 @@ for _ in range(5000):
 	data.append(row)
 
 # Write the data to a CSV file
-filename = '/Users/js0807/Desktop/dev/test/data/board.csv'
+filename = '../data/board.csv'
 with open(filename, 'w', newline='') as file:
 	writer = csv.writer(file)
 	writer.writerow(columns)  # Write the column names
