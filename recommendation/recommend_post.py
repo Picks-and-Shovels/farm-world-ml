@@ -6,6 +6,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 user_data = pd.read_csv("data/user.csv")
 board_data = pd.read_csv("data/board_read_like.csv")
 farm_data = pd.read_csv("data/farm.csv")
+tag_data = pd.read_csv("data/tag.csv")
+board_all_data = pd.read_csv("data/board.csv")
 
 userId = int(sys.argv[1])
 
@@ -44,3 +46,6 @@ sim_liked.extend(sim_df[userId].sort_values(ascending=False)[1:11].index)
 print(sim_liked)
 
 # values : farm
+farm_data = farm_data[['userId', 'crop0', 'crop1', 'crop2', 'crop3']]
+crop_set = set(farm_data.loc[farm_data['userId'] == userId, ['crop0', 'crop1', 'crop2', 'crop3']].values.flatten())
+crop_list = list(crop_set)

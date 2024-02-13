@@ -14,10 +14,10 @@ for _ in range(50):
 		'2024-02-08',  # updatedAt
 		''.join(random.choices(string.ascii_lowercase, k=5)),  # name
 		str(_),  # userId
-		random.randint(0, 4),  # crop0
-		random.randint(0, 4),  # crop1
-		random.randint(0, 4),  # crop2
-		random.randint(0, 4),  # crop3
+		random.randint(0, 5),  # crop0
+		random.randint(0, 5),  # crop1
+		random.randint(0, 5),  # crop2
+		random.randint(0, 5),  # crop3
 	]
 	data.append(row)
 
