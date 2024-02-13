@@ -1,8 +1,13 @@
+import sys
 import pandas as pd
 
 from sklearn.metrics.pairwise import cosine_similarity
 
+user_data = pd.read_csv("data/user.csv")
 board_data = pd.read_csv("data/board_read_like.csv")
+farm_data = pd.read_csv("data/farm.csv")
+
+userId = int(sys.argv[1])
 
 # values : viewed
 sim_view = []
@@ -18,7 +23,7 @@ df_user_board = df_user_board.transpose()
 sim = cosine_similarity(df_user_board, df_user_board)
 sim_df = pd.DataFrame(data=sim, index=df_user_board.index, columns=df_user_board.index)
 
-sim_view.extend(sim_df[0].sort_values(ascending=False)[1:11].index)
+sim_view.extend(sim_df[userId].sort_values(ascending=False)[1:11].index)
 print(sim_view)
 
 # values : liked
@@ -35,7 +40,7 @@ df_user_board = df_user_board.transpose()
 sim = cosine_similarity(df_user_board, df_user_board)
 sim_df = pd.DataFrame(data=sim, index=df_user_board.index, columns=df_user_board.index)
 
-sim_liked.extend(sim_df[0].sort_values(ascending=False)[1:11].index)
+sim_liked.extend(sim_df[userId].sort_values(ascending=False)[1:11].index)
 print(sim_liked)
 
 # values : farm
