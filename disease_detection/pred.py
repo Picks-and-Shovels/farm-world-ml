@@ -4,7 +4,7 @@ import urllib.request
 import tensorflow as tf
 import numpy as np
 
-from bardapi import Bard
+import google.generativeai as genai
 
 model = tf.keras.models.load_model('test_model.h5')
 model.load_weights('test_weights.h5')
@@ -38,7 +38,10 @@ else:
 
 print(req_s)
 
-token = 'your_token'
-bard = Bard(token=token)
+API_KEY = 'your_api_key_here'
+genai.configure(api_key=API_KEY)
 
-print(bard.get_answer(req_s)['content'])
+model = genai.GenerativeModel('gemini-pro')
+response = model.generate_content(req_s)
+
+print(response.text)
