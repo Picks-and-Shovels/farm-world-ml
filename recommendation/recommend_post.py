@@ -23,7 +23,7 @@ df_user_board = df_user_board.transpose()
 sim = cosine_similarity(df_user_board, df_user_board)
 sim_df = pd.DataFrame(data=sim, index=df_user_board.index, columns=df_user_board.index)
 
-sim_view.extend(sim_df[userId].sort_values(ascending=False)[1:11].index)
+sim_view.extend(sim_df[userId].sort_values(ascending=False)[1:21].index)
 #print(sim_view)
 
 # values : liked
@@ -40,7 +40,7 @@ df_user_board = df_user_board.transpose()
 sim = cosine_similarity(df_user_board, df_user_board)
 sim_df = pd.DataFrame(data=sim, index=df_user_board.index, columns=df_user_board.index)
 
-sim_liked.extend(sim_df[userId].sort_values(ascending=False)[1:11].index)
+sim_liked.extend(sim_df[userId].sort_values(ascending=False)[1:21].index)
 #print(sim_liked)
 
 # values : farm
@@ -56,7 +56,7 @@ df_tag_like.sort_values(by='liked', ascending=False, inplace=True)
 crop_tag_rank = []
 
 for i in crop_list:
-	crop_tag_rank.extend(df_tag_like.loc[df_tag_like['tagId'] == i, 'boardId'].values[:3])
+	crop_tag_rank.extend(df_tag_like.loc[df_tag_like['tagId'] == i, 'boardId'].values[:5])
 #print(crop_tag_rank)
 
 same_numbers = list(set(sim_view) & set(sim_liked) & set(crop_tag_rank))
