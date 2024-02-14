@@ -18,7 +18,7 @@ Picks-and-Shovels FarmWorld ML Part Repository
 1. clone this repository
 2. run setup.sh to install requirements.txt
 ### disease_detection
-1. download pre-trained model
+1. download pre-trained model in disease_detection directory
  - download at https://drive.google.com/file/d/1SSs4ZLdTdUOOYDp5Fjpql7AlISgTm_0B/view?usp=drive_link
 2. unzip archive.zip in this directory
 3. run disease_detection/pred.py with img_url to argv[1] 
