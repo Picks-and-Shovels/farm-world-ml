@@ -23,8 +23,9 @@ sim_user_crop.extend(sim_df[userId].sort_values(ascending=False)[1:5].index)
 # get the crop that the user haven't planted
 target_crop_set = set(farm_data.loc[farm_data['userId'] == userId, ['crop0', 'crop1', 'crop2', 'crop3']].values.flatten())
 crop_set = set(farm_data.loc[farm_data['userId'] == sim_user_crop[0], ['crop0', 'crop1', 'crop2', 'crop3']].values.flatten())
-non_duplicated_crop = crop_set - target_crop_set
+non_duplicated_crop = list(crop_set - target_crop_set)
 
 crop_list = ['nothing', 'potato', 'tomato', 'pepper', 'corn', 'grape']
 # i need exception case with empty set, but i'll skip it
-print('suggested crop:', crop_list[non_duplicated_crop.pop()])
+for i in non_duplicated_crop:
+	print(crop_list[i], end=' ')
